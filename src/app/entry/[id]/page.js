@@ -34,7 +34,7 @@ export default async function Page({ params }) {
             {entry.publisherMetadata.username}
 
             {entry.publisherMetadata.isAdmin === true && (
-              <span className='font-semibold px-2.5 py-1.5 rounded-full bg-red-500/10 border-2 border-red-500/50'>
+              <span className='font-semibold px-2.5 py-0.5 text-sm rounded-full bg-red-500/10 border-2 text-red-500 border-red-500/50'>
                 Admin
               </span>
             )}
