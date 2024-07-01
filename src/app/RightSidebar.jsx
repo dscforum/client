@@ -2,7 +2,7 @@
 
 import Button from '@components/Button';
 import Link from 'next/link';
-import { useUser } from '@clerk/nextjs';
+import { SignUpButton, useUser } from '@clerk/nextjs';
 import { useEffect, useState } from 'react';
 import getTopEntries from '@/request/getTopEntries';
 import { TbLoader } from 'react-icons/tb';
@@ -36,19 +36,14 @@ export default function RightSidebar() {
           </p>
 
           <div className='flex w-full mt-2 gap-x-2'>
-            <Button
-              className='w-full text-xs'
-              style='primary'
-            >
+            <SignUpButton>
+              <Button
+                className='w-full text-xs'
+                style='primary'
+              >
               Join Community
-            </Button>
-
-            <Button
-              className='w-full text-xs'
-              style='ghost'
-            >
-              Login
-            </Button>
+              </Button>
+            </SignUpButton>
           </div>
         </div>
       )}
