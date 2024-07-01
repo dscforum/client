@@ -20,6 +20,12 @@ export default function Reply({ entry, reply }) {
           <span className='flex items-center text-sm font-semibold text-secondary gap-x-4'>
             {reply.publisherMetadata.username}
 
+            {entry.publisherMetadata.isAdmin === true && (
+              <span className='font-semibold px-2.5 py-1.5 rounded-full bg-red-500/10 border-2 border-red-500/50'>
+                Admin
+              </span>
+            )}
+
             <DeleteReplyButton entry={entry} reply={reply} />
           </span>
           <span className='text-xs text-tertiary'>

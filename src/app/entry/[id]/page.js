@@ -30,8 +30,14 @@ export default async function Page({ params }) {
         />
 
         <div className='flex flex-col gap-y-1'>
-          <span className='text-sm font-semibold text-secondary'>
+          <span className='flex items-center text-sm font-semibold text-secondary gap-x-4'>
             {entry.publisherMetadata.username}
+
+            {entry.publisherMetadata.isAdmin === true && (
+              <span className='font-semibold px-2.5 py-1.5 rounded-full bg-red-500/10 border-2 border-red-500/50'>
+                Admin
+              </span>
+            )}
           </span>
           <span className='text-xs text-tertiary'>
             {formatDistanceToNow(new Date(entry.publishedAt), { addSuffix: true })}
