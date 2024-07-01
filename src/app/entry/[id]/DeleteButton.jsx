@@ -5,16 +5,18 @@ import { useUser } from '@clerk/nextjs';
 import { useState } from 'react';
 import deleteEntry from '@/request/deleteEntry';
 import deleteReply from '@/request/deleteReply';
+import { useAuth } from '@clerk/nextjs';
 
 function DeleteEntryButton({ entry }) {
   const userData = useUser();
+  const { getToken } = useAuth();
 
   const [loading, setLoading] = useState(false);
 
   function continueDeleteEntry() {
     setLoading(true);
 
-    deleteEntry(entry._id)
+    deleteEntry(entry._id, getToken())
       .then(() => window.location.reload())
       .catch(error => {
         console.error(error);
@@ -41,13 +43,14 @@ function DeleteEntryButton({ entry }) {
 
 function DeleteReplyButton({ entry, reply }) {
   const userData = useUser();
+  const { getToken } = useAuth();
 
   const [loading, setLoading] = useState(false);
 
   function continueDeleteReply() {
     setLoading(true);
 
-    deleteReply(entry._id, reply._id)
+    deleteReply(entry._id, reply._id, getToken())
       .then(() => window.location.reload())
       .catch(error => {
         console.error(error);

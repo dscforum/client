@@ -7,10 +7,12 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { GoPaperAirplane } from 'react-icons/go';
 import createReply from '@/request/createReply';
+import { useAuth } from '@clerk/nextjs';
 
 export default function SubmitReply({ entryId, replies }) {
   const [reply, setReply] = useState('');
   const [loading, setLoading] = useState(false);
+  const { getToken } = useAuth();
 
   const userData = useUser();
   if (!userData.isSignedIn) return null;
@@ -21,7 +23,7 @@ export default function SubmitReply({ entryId, replies }) {
   function submitReply() {
     setLoading(true);
 
-    createReply(entryId, reply)
+    createReply(entryId, reply, getToken())
       .then(() => window.location.reload())
       .catch(error => {
         console.error(error);

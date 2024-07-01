@@ -5,16 +5,18 @@ import { useUser } from '@clerk/nextjs';
 import { useState } from 'react';
 import pinEntry from '@/request/pinEntry';
 import unPinEntry from '@/request/unPinEntry';
+import { useAuth } from '@clerk/nextjs';
 
 function PinButton({ entry }) {
   const userData = useUser();
+  const { getToken } = useAuth();
 
   const [loading, setLoading] = useState(false);
 
   function continuePinEntry() {
     setLoading(true);
 
-    pinEntry(entry._id)
+    pinEntry(entry._id, getToken())
       .then(() => window.location.reload())
       .catch(error => {
         console.error(error);
@@ -40,13 +42,14 @@ function PinButton({ entry }) {
 
 function UnPinButton({ entry }) {
   const userData = useUser();
+  const { getToken } = useAuth();
 
   const [loading, setLoading] = useState(false);
 
   function continueUnPinEntry() {
     setLoading(true);
 
-    unPinEntry(entry._id)
+    unPinEntry(entry._id, getToken())
       .then(() => window.location.reload())
       .catch(error => {
         console.error(error);

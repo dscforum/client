@@ -5,6 +5,7 @@ import Input from '@components/Input';
 import { useState } from 'react';
 import createEntry from '@/request/createEntry';
 import { useRouter } from 'next/navigation';
+import { useAuth } from '@clerk/nextjs';
 
 export default function Page({ params }) {
   const [title, setTitle] = useState('');
@@ -13,11 +14,12 @@ export default function Page({ params }) {
   const [loading, setLoading] = useState(false);
 
   const router = useRouter();
+  const { getToken } = useAuth();
 
   function continueCreateEntry() {
     setLoading(true);
 
-    createEntry({ category: params.category, title, content })
+    createEntry({ category: params.category, title, content }, getToken())
       .then(data => {
         router.push(`/entry/${data._id}`);
         
