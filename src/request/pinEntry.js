@@ -7,7 +7,7 @@ export default function pinEntry(id) {
     const url = `${config.api.url}/entries/${id}/pin`;
 
     try {
-      await axios.put(url, {}, { withCredentials: true });
+      await axios.post(url, {}, { withCredentials: true });
       resolve();
     } catch (error) {
       reject(error instanceof axios.AxiosError ? (error.response?.data?.error || error.message) : error.message);

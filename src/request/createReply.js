@@ -7,7 +7,7 @@ export default function createReply(id, content) {
     const url = `${config.api.url}/entries/${id}/replies`;
 
     try {
-      await axios.put(url, { content }, { withCredentials: true });
+      await axios.post(url, { content }, { withCredentials: true });
       resolve();
     } catch (error) {
       reject(error instanceof axios.AxiosError ? (error.response?.data?.error || error.message) : error.message);

@@ -7,7 +7,7 @@ export default function createEntry(keys) {
     const url = `${config.api.url}/entries`;
 
     try {
-      const response = await axios.put(url, keys, { withCredentials: true });
+      const response = await axios.post(url, keys, { withCredentials: true });
       resolve(response.data);
     } catch (error) {
       reject(error instanceof axios.AxiosError ? (error.response?.data?.error || error.message) : error.message);
