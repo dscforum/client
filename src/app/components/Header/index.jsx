@@ -13,7 +13,7 @@ export default function Header() {
   const currentCategory = useCategoryStore(state => state.currentCategory);
 
   return (
-    <div className="h-[80px] border-b border-b-primary justify-between lg:rounded-t-[2.5rem] w-full bg-tertiary flex items-center px-6">
+    <div className="h-[80px] border-b border-b-primary justify-between 2xl:rounded-t-[2.5rem] w-full bg-tertiary flex items-center px-6">
       <Link
         className='flex items-center gap-x-4 hover:opacity-70'
         href="/"
@@ -38,6 +38,7 @@ export default function Header() {
               
               <Button
                 style='primary'
+                className='hidden sm:block'
                 disabled={currentCategory === 'announcements' && userData.user.publicMetadata.role !== 'admin'}
               >
                 <div>

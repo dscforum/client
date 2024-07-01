@@ -29,13 +29,13 @@ export default function Page({ params }) {
   }
 
   return (
-    <div className="mt-8">
+    <div className="w-full px-8 mt-8 2xl:px-0">
       <h3 className="text-3xl font-bold">Create Entry</h3>
       <p className="mt-2 text-secondary">
         This is the page for creating an entry in the <strong>{params.category}</strong> category.
       </p>
 
-      <div className="flex flex-col mt-12 gap-y-8 max-w-[500px]">
+      <div className="flex flex-col mt-12 gap-y-8 2xl:max-w-[500px]">
         <div className="flex flex-col gap-y-2">
           <label htmlFor="title" className="font-semibold text-primary">Title</label>
           <Input 

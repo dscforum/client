@@ -24,7 +24,7 @@ export default function RightSidebar() {
   }, []);
 
   return (
-    <div className='flex flex-col gap-y-8 mr-8 mt-8 max-w-[300px] h-full w-full'>
+    <div className='flex flex-col gap-y-8 px-8 2xl:px-0 2xl:mr-8 mt-8 mb-8 2xl:mb-0 2xl:max-w-[300px] h-full w-full'>
       {!userData.isSignedIn && (
         <div className='flex flex-col w-full p-5 border gap-y-2 border-primary h-max rounded-3xl bg-tertiary'>
           <h3 className='text-lg font-bold text-primary'>

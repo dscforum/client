@@ -5,17 +5,19 @@ import { formatDistanceToNow } from 'date-fns';
 import SubmitReply from '@/app/entry/[id]/SubmitReply';
 import Reply from '@/app/entry/[id]/Reply';
 import { DeleteEntryButton } from '@/app/entry/[id]/DeleteButton';
+import { UnPinButton, PinButton } from '@/app/entry/[id]/PinButton';
 
 export default async function Page({ params }) {
   const entry = await getEntry(params.id).catch(() => null);
   if (!entry) redirect('/');
     
   return (
-    <div className='flex flex-col w-full mt-12 gap-y-4'>
+    <div className='flex flex-col w-full px-8 mt-12 2xl:px-0 gap-y-4'>
       <h2 className='flex items-center text-2xl font-bold gap-x-4'>
         {entry.title}
 
         <DeleteEntryButton entry={entry} />
+        {entry.flags.isPinned === true ? <UnPinButton entry={entry} /> : <PinButton entry={entry} />}
       </h2>
 
       <div className='flex gap-x-2'>

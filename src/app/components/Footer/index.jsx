@@ -15,8 +15,8 @@ export default function Footer() {
   ];
 
   return (
-    <div className="w-full px-8 my-4 flex items-center gap-x-6">
-      <span className="text-tertiary text-sm font-medium">
+    <div className="flex flex-wrap items-center w-full gap-6 px-8 my-4">
+      <span className="text-sm font-medium text-tertiary">
         © {new Date().getFullYear()} dscforum.com All rights reserved.
       </span>
 
@@ -25,7 +25,7 @@ export default function Footer() {
           <Link
             key={`footer-link-${link.label}`}
             href={link.url}
-            className="text-primary hover:underline hover:text-secondary text-sm"
+            className="text-sm text-primary hover:underline hover:text-secondary"
           >
             {link.label}
           </Link>

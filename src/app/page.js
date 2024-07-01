@@ -44,8 +44,8 @@ export default function Page() {
   }
 
   return (
-    <div className='flex flex-col w-full mt-8 gap-y-4'>
-      <div className='border-2 border-primary relative w-full rounded-3xl h-[250px] bg-tertiary'>
+    <div className='flex flex-col w-full px-8 mt-8 2xl:px-0 gap-y-4'>
+      <div className='border-2 border-primary relative w-full rounded-3xl h-[150px] sm:h-[250px] bg-tertiary'>
         <Image
           src={categoryData.image}
           alt={`Category banner for ${categoryData.name}`}
@@ -53,7 +53,7 @@ export default function Page() {
         />
 
         <div className='w-full flex p-8 flex-col gap-y-2 justify-end h-full rounded-[1.47rem] absolute top-0 left-0 bg-gradient-to-t from-black/90 via-black/45'>
-          <h2 className='flex items-center text-3xl font-bold text-primary gap-x-4'>
+          <h2 className='flex items-center text-xl font-bold sm:text-3xl text-primary gap-x-4'>
             <categoryData.icon />
             {categoryData.label}
           </h2>
