@@ -13,10 +13,10 @@ function PinButton({ entry }) {
 
   const [loading, setLoading] = useState(false);
 
-  function continuePinEntry() {
+  async function continuePinEntry() {
     setLoading(true);
 
-    pinEntry(entry._id, getToken())
+    pinEntry(entry._id, await getToken())
       .then(() => window.location.reload())
       .catch(error => {
         console.error(error);
@@ -46,10 +46,10 @@ function UnPinButton({ entry }) {
 
   const [loading, setLoading] = useState(false);
 
-  function continueUnPinEntry() {
+  async function continueUnPinEntry() {
     setLoading(true);
 
-    unPinEntry(entry._id, getToken())
+    unPinEntry(entry._id, await getToken())
       .then(() => window.location.reload())
       .catch(error => {
         console.error(error);

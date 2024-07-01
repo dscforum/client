@@ -20,10 +20,10 @@ export default function SubmitReply({ entryId, replies }) {
   const hasReplied = replies.some(reply => reply.publisherId === userData.user.id);
   if (hasReplied) return null;
 
-  function submitReply() {
+  async function submitReply() {
     setLoading(true);
 
-    createReply(entryId, reply, getToken())
+    createReply(entryId, reply, await getToken())
       .then(() => window.location.reload())
       .catch(error => {
         console.error(error);

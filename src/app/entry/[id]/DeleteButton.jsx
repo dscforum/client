@@ -13,10 +13,10 @@ function DeleteEntryButton({ entry }) {
 
   const [loading, setLoading] = useState(false);
 
-  function continueDeleteEntry() {
+  async function continueDeleteEntry() {
     setLoading(true);
 
-    deleteEntry(entry._id, getToken())
+    deleteEntry(entry._id, await getToken())
       .then(() => window.location.reload())
       .catch(error => {
         console.error(error);
@@ -47,10 +47,10 @@ function DeleteReplyButton({ entry, reply }) {
 
   const [loading, setLoading] = useState(false);
 
-  function continueDeleteReply() {
+  async function continueDeleteReply() {
     setLoading(true);
 
-    deleteReply(entry._id, reply._id, getToken())
+    deleteReply(entry._id, reply._id, await getToken())
       .then(() => window.location.reload())
       .catch(error => {
         console.error(error);

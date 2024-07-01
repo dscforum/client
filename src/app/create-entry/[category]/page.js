@@ -16,10 +16,10 @@ export default function Page({ params }) {
   const router = useRouter();
   const { getToken } = useAuth();
 
-  function continueCreateEntry() {
+  async function continueCreateEntry() {
     setLoading(true);
 
-    createEntry({ category: params.category, title, content }, getToken())
+    createEntry({ category: params.category, title, content }, await getToken())
       .then(data => {
         router.push(`/entry/${data._id}`);
         
