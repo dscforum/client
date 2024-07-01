@@ -1,0 +1,38 @@
+'use client';
+
+import Image from 'next/image';
+import { formatDistanceToNow } from 'date-fns';
+import { DeleteReplyButton } from '@/app/entry/[id]/DeleteButton';
+
+export default function Reply({ entry, reply }) {
+  return (
+    <div className="flex flex-col w-full gap-y-4">
+      <div className='flex gap-x-2'>
+        <Image
+          src={reply.publisherMetadata.avatar}
+          alt={`Avatar for ${reply.publisherMetadata.username}`}
+          width={40}
+          height={40}
+          className='rounded-full w-[40px] h-[40px]'
+        />
+
+        <div className='flex flex-col gap-y-1'>
+          <span className='flex items-center text-sm font-semibold text-secondary gap-x-4'>
+            {reply.publisherMetadata.username}
+
+            <DeleteReplyButton entry={entry} reply={reply} />
+          </span>
+          <span className='text-xs text-tertiary'>
+            {formatDistanceToNow(new Date(reply.publishedAt), { addSuffix: true })}
+          </span>
+        </div>
+      </div>
+
+      <div className='mt-4 text-sm font-medium'>
+        {reply.content}
+      </div>
+
+      <div className='w-full h-[1px] my-8 bg-quinary' />
+    </div>
+  );
+}

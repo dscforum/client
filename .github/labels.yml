@@ -1,0 +1,15 @@
+- name: 'Bug'
+  color: 'FF6347'
+  description: Issues related to bugs specifically in the frontend codebase of Next.js.
+- name: 'Feature'
+  color: '4682B4'
+  description: Requests or discussions related to new features in the Next.js frontend.
+- name: 'UI/UX'
+  color: 'FFD700'
+  description: Issues concerning user interface or user experience improvements in the frontend.
+- name: 'Performance'
+  color: '32CD32'
+  description: Discussions or problems regarding performance optimizations in the frontend code.
+- name: 'Dependabot: Patch'
+  color: 'FFD700'
+  description: Pull requests opened by Dependabot to update dependencies.

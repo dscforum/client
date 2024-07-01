@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  --color-background-primary: #1E1E1E;
+  --color-background-secondary: #232323;
+  --color-background-tertiary: #2C2C2C;
+  --color-background-quaternary: #363636;
+  --color-background-quinary: #424242;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #B3B3B3;
+  --color-text-tertiary: #7A7A7A;
+  --color-border-primary: #535353;
+}
+
+html, body {
+  width: 100%;
+  min-width: 320px !important;
+  background-color: var(--color-background-primary);
+  color: white;
+}
