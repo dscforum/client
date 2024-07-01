@@ -20,7 +20,7 @@ export default function Reply({ entry, reply }) {
           <span className='flex items-center text-sm font-semibold text-secondary gap-x-4'>
             {reply.publisherMetadata.username}
 
-            {entry.publisherMetadata.isAdmin === true && (
+            {reply.publisherMetadata.isAdmin === true && (
               <span className='font-semibold px-2.5 py-0.5 text-xs rounded-full bg-orange-500/10 border-2 text-orange-500 border-orange-500/50'>
                 Staff
               </span>
