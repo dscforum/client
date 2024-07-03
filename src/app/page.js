@@ -102,9 +102,9 @@ export default function Page() {
               <Image
                 src={entry.publisherMetadata.avatar}
                 alt={`Avatar of ${entry.publisherMetadata.username}`}
-                className='rounded-full'
                 width={32}
                 height={32}
+                className='rounded-full w-[32px] h-[32px]'
               />
 
               <div className='flex flex-col gap-y-1'>
