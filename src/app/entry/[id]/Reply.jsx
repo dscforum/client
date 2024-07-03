@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { formatDistanceToNow } from 'date-fns';
 import { DeleteReplyButton } from '@/app/entry/[id]/DeleteButton';
+import Markdown from '@/app/components/Markdown';
 
 export default function Reply({ entry, reply }) {
   return (
@@ -35,7 +36,9 @@ export default function Reply({ entry, reply }) {
       </div>
 
       <div className='mt-4 text-sm font-medium'>
-        {reply.content}
+        <Markdown>
+          {reply.content}
+        </Markdown>
       </div>
 
       <div className='w-full h-[1px] my-8 bg-quinary' />

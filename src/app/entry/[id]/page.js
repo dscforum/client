@@ -6,6 +6,7 @@ import SubmitReply from '@/app/entry/[id]/SubmitReply';
 import Reply from '@/app/entry/[id]/Reply';
 import { DeleteEntryButton } from '@/app/entry/[id]/DeleteButton';
 import { UnPinButton, PinButton } from '@/app/entry/[id]/PinButton';
+import Markdown from '@/app/components/Markdown';
 
 export default async function Page({ params }) {
   const entry = await getEntry(params.id).catch(() => null);
@@ -46,7 +47,9 @@ export default async function Page({ params }) {
       </div>
 
       <div className='mt-4 text-sm font-medium'>
-        {entry.content}
+        <Markdown>
+          {entry.content}
+        </Markdown>
       </div>
 
       <div className='w-full h-[1px] my-8 bg-quinary' />

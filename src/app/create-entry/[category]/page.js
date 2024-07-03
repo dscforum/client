@@ -6,6 +6,7 @@ import { useState } from 'react';
 import createEntry from '@/request/createEntry';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@clerk/nextjs';
+import Markdown from '@/app/components/Markdown';
 
 export default function Page({ params }) {
   const [title, setTitle] = useState('');
@@ -30,6 +31,8 @@ export default function Page({ params }) {
       .finally(() => setLoading(false));
   }
 
+  const [markdownPreview, setMarkdownPreview] = useState(false);
+
   return (
     <div className="w-full px-8 mt-8 2xl:px-0">
       <h3 className="text-3xl font-bold">Create Entry</h3>
@@ -50,20 +53,37 @@ export default function Page({ params }) {
         </div>
 
         <div className="flex flex-col gap-y-2">
-          <label htmlFor="title" className="font-semibold text-primary">Content</label>
-          <Input 
-            placeholder='Write your thoughts here...'
-            value={content}
-            onChange={event => setContent(event.target.value)}
-            id="content"
-            style='paragraph'
-          />
+          <label htmlFor="title" className="flex items-center font-semibold gap-x-4 text-primary">
+            Content
+
+            <Button
+              style='ghost'
+              onClick={() => setMarkdownPreview(!markdownPreview)}
+            >
+              {markdownPreview ? 'Hide' : 'Show'} Preview
+            </Button>
+          </label>
+
+          {markdownPreview ? (
+            <Markdown>
+              {content}
+            </Markdown>
+          ) : (
+            <Input 
+              placeholder='Write your thoughts here...'
+              value={content}
+              onChange={event => setContent(event.target.value)}
+              id="content"
+              style='paragraph'
+            />
+          )}
         </div>
 
         <Button
           style='primary'
           onClick={continueCreateEntry}
           loading={loading}
+          disabled={!title || !content}
         >
           Create {title ? `"${title}"` : 'Entry'}
         </Button>
