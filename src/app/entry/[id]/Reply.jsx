@@ -34,10 +34,12 @@ export default function Reply({ entry, reply }) {
           </span>
         </div>
       </div>
-
-      <Markdown>
-        {reply.content}
-      </Markdown>
+      
+      <div className='flex flex-col text-secondary'>
+        <Markdown>
+          {reply.content}
+        </Markdown>
+      </div>
 
       <div className='w-full h-[1px] my-8 bg-quinary' />
     </div>

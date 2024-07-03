@@ -27,7 +27,7 @@ export default async function Page({ params }) {
           alt={`Avatar for ${entry.publisherMetadata.username}`}
           width={40}
           height={40}
-          className='rounded-full'
+          className='rounded-full h-[40px] w-[40px]'
         />
 
         <div className='flex flex-col gap-y-1'>
@@ -46,9 +46,11 @@ export default async function Page({ params }) {
         </div>
       </div>
 
-      <Markdown>
-        {entry.content}
-      </Markdown>
+      <div className='flex flex-col text-secondary'>
+        <Markdown>
+          {entry.content}
+        </Markdown>
+      </div>
 
       <div className='w-full h-[1px] my-8 bg-quinary' />
 

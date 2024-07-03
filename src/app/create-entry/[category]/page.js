@@ -65,9 +65,11 @@ export default function Page({ params }) {
           </label>
 
           {markdownPreview ? (
-            <Markdown>
-              {content}
-            </Markdown>
+            <div className='flex flex-col text-secondary'>
+              <Markdown>
+                {content}
+              </Markdown>
+            </div>
           ) : (
             <Input 
               placeholder='Write your thoughts here...'
