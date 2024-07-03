@@ -89,7 +89,7 @@ export default function RightSidebar() {
                       alt={`Avatar for ${entry.publisherMetadata.username}`}
                       width={32}
                       height={32}
-                      className='rounded-full'
+                      className='rounded-full w-[32px] h-[32px]'
                     />
                     
                     <span className='text-sm truncate text-secondary'>

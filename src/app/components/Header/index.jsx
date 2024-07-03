@@ -23,6 +23,7 @@ export default function Header() {
           alt="dscforum.com Logo"
           width={32}
           height={32}
+          className='rounded-full w-[32px] h-[32px]'
         />
 
         <h1 className="text-xl font-semibold text-primary">
