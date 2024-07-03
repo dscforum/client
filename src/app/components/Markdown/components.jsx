@@ -67,7 +67,7 @@ const markdownComponents = {
         alt={alt}
         width={'100%'}
         height={'auto'}
-        className="my-4 rounded-xl"
+        className="my-4 rounded-xl max-h-[500px] w-auto"
       />
     );
   },
