@@ -35,11 +35,9 @@ export default function Reply({ entry, reply }) {
         </div>
       </div>
 
-      <div className='mt-4 text-sm font-medium'>
-        <Markdown>
-          {reply.content}
-        </Markdown>
-      </div>
+      <Markdown>
+        {reply.content}
+      </Markdown>
 
       <div className='w-full h-[1px] my-8 bg-quinary' />
     </div>

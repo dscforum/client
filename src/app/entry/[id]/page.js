@@ -46,11 +46,9 @@ export default async function Page({ params }) {
         </div>
       </div>
 
-      <div className='mt-4 text-sm font-medium'>
-        <Markdown>
-          {entry.content}
-        </Markdown>
-      </div>
+      <Markdown>
+        {entry.content}
+      </Markdown>
 
       <div className='w-full h-[1px] my-8 bg-quinary' />
 
