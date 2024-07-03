@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
             <div className="w-full min-h-[100dvh] bg-secondary 2xl:rounded-[2.5rem]">
               <Header />
 
-              <div className='flex flex-col w-full h-full 2xl:flex-row gap-x-12'>
+              <div className='flex flex-col w-full h-full pb-4 2xl:flex-row gap-x-12'>
                 <Suspense fallback={<></>}>
                   <Categories />
                 </Suspense>
