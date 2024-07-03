@@ -88,7 +88,7 @@ const markdownComponents = {
     </ol>
   ),
   li: ({ children }) => <li>{children}</li>,
-  p: ({ children }) => <p className="my-4 text-tertiary">{children}</p>,
+  p: ({ children }) => <p className="my-2 text-secondary">{children}</p>,
   hr: () => <hr className="my-4" style={{ borderTop: '1px solid rgba(var(--border-primary))' }} />
 };
 
